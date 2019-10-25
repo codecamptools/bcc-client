@@ -28,7 +28,7 @@
           <div class="col">
             <p class="m-0">
               <small>
-                Need help convincing your manager why you should attend this conference? It will be easy this conference is
+                Need help convincing your manager you should attend this conference? It's easy this conference is
                 <b
                   class="text-theme-info"
                 >FREE!</b>

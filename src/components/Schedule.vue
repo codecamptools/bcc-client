@@ -20,11 +20,11 @@
         <li class="list-group-item schedule-item mb-4" v-for="t in talks" :key="t.id">
           <div>
             <h5>{{t.name}}</h5>
-            <p class="lead">{{t.abstract.slice(0,120)}}...</p>
+            <p class="lead text-secondary">{{t.abstract.slice(0,120)}}...</p>
             <div class="d-flex align-items-center justify-content-between pr-3">
               <div class="d-flex align-items-center">
                 <img height="60" class="rounded" :src="t.speaker.img" :alt="t.speaker.name" />
-                <div class="pl-3 ml-2 border-left d-flex flex-column">
+                <div class="pl-3 ml-2 text-primary border-primary border-left d-flex flex-column">
                   <small>{{t.speaker.name}}</small>
                   <small>{{t.speaker.company}}</small>
                   <small>{{t.speaker.title}}</small>
@@ -93,10 +93,13 @@ export default {
   background: var(--dark);
   color: var(--light);
   border: none;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 .schedule .nav-link{
   border-radius: 0 !important;
   border: none;
+  width: max-content;
 }
 @media screen and (max-width: 700px) {
   .schedule-item {
@@ -114,6 +117,8 @@ export default {
   .schedule .nav-tabs {
     padding: 0;
     margin: -30px;
+    display: flex;
+    flex-wrap: nowrap;
   }
 }
 </style>

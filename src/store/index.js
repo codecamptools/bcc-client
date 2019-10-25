@@ -23,8 +23,9 @@ export default new Vuex.Store({
       title: "Quantum Computing and the Future of Software Development",
       abstract:
         "Developers like you and I need to realize this is inevitable, and we need to recognize that these changes are just starting and we can get in on the ground floor and thrive through integration and simply not resisting.",
-      time: "8:30-9:30",
-      session: "keynote"
+      time: "8:30 - 9:30 AM",
+      session: "keynote",
+      location: "Jordan Ballroom"
     },
     sessions: [
       {
@@ -708,6 +709,20 @@ export default new Vuex.Store({
           "https://bcw.blob.core.windows.net/public/img/www/assets/6766727554593956",
         url: "https://microsoft.com",
         level: "gold"
+      },
+      {
+        name: "Microsoft",
+        logo:
+          "https://bcw.blob.core.windows.net/public/img/www/assets/6766727554593956",
+        url: "https://microsoft.com",
+        level: "silver"
+      },
+      {
+        name: "Microsoft",
+        logo:
+          "https://bcw.blob.core.windows.net/public/img/www/assets/6766727554593956",
+        url: "https://microsoft.com",
+        level: "friend"
       }
     ]
   },

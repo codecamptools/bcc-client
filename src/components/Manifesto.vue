@@ -1,6 +1,6 @@
 <template>
   <div class="row m-auto p-md-3 mt-5">
-    <div class="col-12 col-lg-4 offset-lg-1 order-2 order-lg-1">
+    <div class="col-12 col-lg-4 offset-lg-1 order-2 order-lg-1 justify-content-center d-flex flex-column">
       <h2>CodeCamp Manifesto</h2>
       <p>Code Camp is about the software developer community at large. It a place for developers to come and learn from their peers. Topics are always based on community interest and never determined by anyone other than the community.</p>
     </div>
