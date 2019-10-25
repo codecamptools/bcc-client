@@ -1,32 +1,76 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <navbar />
+    <router-view />
   </div>
 </template>
 
+<script>
+import Navbar from "./components/Navbar";
+export default {
+  name: "App",
+  components: {
+    Navbar
+  }
+};
+</script>
+
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+:root {
+  --theme-info: #66fcf1;
+  --theme-dark: #1f2833;
+  --shadow: 2px 0 8px #1f2833;
 }
 
-#nav {
-  padding: 30px;
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  color: var(--theme-dark);
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.text-shadow {
+  filter: drop-shadow(var(--shadow));
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+.text-theme-info {
+  color: var(--theme-info);
+}
+.bg-theme-info {
+  background: var(--theme-info);
+}
+
+.bg-theme-dark {
+  background: var(--theme-dark);
+}
+
+.z-depth {
+  box-shadow: 0 4px 8px rgba(100, 100, 100, 0.5);
+}
+
+.transition {
+  transition: all 0.3s linear;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.show-on-hover {
+  opacity: 0;
+  width: 0;
+  transition: all 0.3s linear;
+}
+
+.square {
+  border-radius: 0;
+}
+
+.action {
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+*:hover > .show-on-hover {
+  opacity: 1;
 }
 </style>
