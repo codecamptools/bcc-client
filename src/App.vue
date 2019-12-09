@@ -7,10 +7,14 @@
 
 <script>
 import Navbar from "./components/Navbar";
+import SessionizeService from "./Services/SessionizeService";
 export default {
   name: "App",
   components: {
     Navbar
+  },
+  mounted() {
+    SessionizeService.loadData();
   }
 };
 </script>
@@ -26,6 +30,9 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 18px;
   color: var(--theme-dark);
+}
+.no-scroll{
+  overflow: hidden;
 }
 
 .text-shadow {

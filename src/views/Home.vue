@@ -9,7 +9,8 @@
         </div>
       </div>
       <about />
-      <schedule />
+      <hr>
+      <speakers />
       <hr />
       <sponsors />
     </main>
@@ -21,7 +22,7 @@
 import Hero from "../components/Hero";
 import Keynote from "../components/Keynote";
 import About from "../components/About";
-import Schedule from "../components/Schedule";
+import Speakers from "../components/Speakers";
 import Sponsors from "../components/Sponsors";
 
 export default {
@@ -30,7 +31,7 @@ export default {
     Hero,
     Keynote,
     About,
-    Schedule,
+    Speakers,
     Sponsors
   }
 };
