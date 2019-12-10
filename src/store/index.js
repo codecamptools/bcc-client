@@ -7,9 +7,11 @@ export default new Vuex.Store({
   state: {
     event: {
       name: "Boise CodeCamp",
-      date: "March 22",
+      date: "March 21",
+      dTime: new Date("2020-03-21 8:00"),
       location: "Boise, Id",
-      address: ""
+      venue: "Boise State University",
+      address: "1700 W University Dr, Boise, ID 83725"
     },
     keynote: {
       speaker: {

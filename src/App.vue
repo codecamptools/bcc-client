@@ -1,7 +1,10 @@
 <template>
   <div id="app">
     <navbar />
-    <router-view />
+    <main>
+      <router-view />
+    </main>
+    <footer></footer>
   </div>
 </template>
 
@@ -30,8 +33,23 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 18px;
   color: var(--theme-dark);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
-.no-scroll{
+
+main {
+  flex-grow: 1;
+}
+
+footer {
+  border-top: 3px solid var(--primary);
+  height: 300px;
+  background: var(--dark);
+  color: var(--light);
+}
+
+.no-scroll {
   overflow: hidden;
 }
 
@@ -77,7 +95,7 @@ body {
   transition: all 0.3s linear;
 }
 
-a:hover{
+a:hover {
   text-decoration: none;
 }
 

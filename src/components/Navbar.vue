@@ -6,7 +6,8 @@
     <router-link class="d-flex align-items-center" to="/">
       <img height="45" src="../assets/logo.png" alt="Boise Code Camp Logo" />
       <h4 class="m-0 ml-2 text-primary" :class="scrolled ? '' : 'text-shadow'">
-        <span :class="scrolled ? 'text-dark' : 'text-white'">Boise</span>CodeCamp
+        <span :class="scrolled ? 'text-dark' : 'text-white'">Boise</span
+        >CodeCamp
       </h4>
     </router-link>
     <button
@@ -22,33 +23,11 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">
-            Home
-            <span class="sr-only">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="navbarDropdown"
-            role="button"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-            >Dropdown</a
-          >
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
+      <ul class="navbar-nav ml-auto ">
+        <li class="nav-item" v-for="link in links" :key="link.to.name">
+          <router-link class="nav-link text-capitalize" :to="link.to">
+            {{ link.to.name }}
+          </router-link>
         </li>
       </ul>
     </div>
@@ -66,7 +45,18 @@ export default {
   },
   data() {
     return {
-      scrolled: false
+      scrolled: false,
+      links: [
+        {
+          to: { name: "register" }
+        },
+        {
+          to: { name: "volunteer" }
+        },
+        {
+          to: { name: "sponsor" }
+        }
+      ]
     };
   },
   methods: {
