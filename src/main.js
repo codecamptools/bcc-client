@@ -3,6 +3,7 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import { QuickVue } from "@bcwdev/quickvue";
+import "register-service-worker";
 
 Vue.use(QuickVue);
 Vue.config.productionTip = false;

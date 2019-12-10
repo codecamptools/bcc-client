@@ -3,7 +3,12 @@
     class="navbar fixed-top navbar-expand-lg transition"
     :class="scrolled ? 'navbar-light bg-light z-depth' : 'navbar-dark'"
   >
-    <a class="navbar-brand" href="#">Navbar</a>
+    <router-link class="d-flex align-items-center" to="/">
+      <img height="45" src="../assets/logo.png" alt="Boise Code Camp Logo" />
+      <h4 class="m-0 ml-2 text-primary" :class="scrolled ? '' : 'text-shadow'">
+        <span :class="scrolled ? 'text-dark' : 'text-white'">Boise</span>CodeCamp
+      </h4>
+    </router-link>
     <button
       class="navbar-toggler"
       type="button"
@@ -36,7 +41,8 @@
             data-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="false"
-          >Dropdown</a>
+            >Dropdown</a
+          >
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="#">Action</a>
             <a class="dropdown-item" href="#">Another action</a>

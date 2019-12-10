@@ -77,6 +77,10 @@ body {
   transition: all 0.3s linear;
 }
 
+a:hover{
+  text-decoration: none;
+}
+
 *:hover > .show-on-hover {
   opacity: 1;
 }
