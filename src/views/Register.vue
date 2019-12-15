@@ -1,12 +1,14 @@
 <template>
-  <section>
-    <hero-sm />
+  <section class="register">
+    <hero-sm bg="" />
     <div class="container-fluid pt-5 pl-lg-5 pr-lg-5 bg-white">
       <div class="row">
         <div class="col-12 col-lg-10 m-auto">
           <div class="timer-section">
             <div id="countdown">
-              <ul class="pl-2 d-flex flex-column flex-md-row justify-content-center">
+              <ul
+                class="pl-2 d-flex flex-column flex-md-row justify-content-center"
+              >
                 <li>
                   <p class="days">{{ days }}</p>
                   <p class="timeRefDays">days</p>
@@ -26,7 +28,7 @@
               </ul>
             </div>
           </div>
-          <hr>
+          <hr />
           <article class="content-item page">
             <h1 class="page-title">Register For Code Camp</h1>
             <p><strong>Skip the line register online?</strong></p>
@@ -140,6 +142,9 @@ export default {
 </script>
 
 <style>
+.register header {
+  background-image: url(/img/codecamp-register.jpg);
+}
 .timer-section {
   padding: 0px 0px 0px 0px;
   width: 100%;

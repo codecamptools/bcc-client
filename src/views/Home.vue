@@ -12,6 +12,8 @@
       <hr />
       <speakers />
       <hr />
+      <experience />
+      <hr />
       <sponsors />
     </section>
   </div>
@@ -23,6 +25,7 @@ import Keynote from "../components/Keynote";
 import About from "../components/About";
 import Speakers from "../components/Speakers";
 import Sponsors from "../components/Sponsors";
+import Experience from "../components/Experience";
 
 export default {
   name: "home",
@@ -31,6 +34,7 @@ export default {
     Keynote,
     About,
     Speakers,
+    Experience,
     Sponsors
   }
 };

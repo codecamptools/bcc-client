@@ -4,7 +4,7 @@
     <main>
       <router-view />
     </main>
-    <footer></footer>
+    <footer class="mt-3"></footer>
   </div>
 </template>
 

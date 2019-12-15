@@ -52,7 +52,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 header {
   background-image: url(/img/codecamp-header-bg.png);
   background-position: center;

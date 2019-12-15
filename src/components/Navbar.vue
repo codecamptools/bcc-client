@@ -23,9 +23,13 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto ">
+      <ul class="navbar-nav ml-auto text-right">
         <li class="nav-item" v-for="link in links" :key="link.to.name">
-          <router-link class="nav-link text-capitalize" :to="link.to">
+          <router-link
+            class="nav-link text-uppercase"
+            :class="scrolled ? 'text-dark' : 'text-light'"
+            :to="link.to"
+          >
             {{ link.to.name }}
           </router-link>
         </li>
@@ -66,3 +70,15 @@ export default {
   }
 };
 </script>
+
+<style>
+.nav-link {
+  display: inline-block;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s linear;
+  margin: 0 0.5rem;
+}
+.nav-link.router-link-exact-active {
+  border-bottom: 2px solid var(--primary);
+}
+</style>

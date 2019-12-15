@@ -2,9 +2,9 @@
   <div class="p-2 text-center h-100 d-flex flex-column justify-content-between">
     <img
       class="rounded img-fluid grayscale action"
-      :src="
-        speaker.profilePicture ||
-          `http://tinygraphs.com/squares/${speaker.fullName}`
+      :src="speaker.profilePicture"
+      @error="
+        speaker.profilePicture = `http://tinygraphs.com/squares/${speaker.fullName}`
       "
       :alt="speaker.fullName"
       @click="setActive(speaker)"

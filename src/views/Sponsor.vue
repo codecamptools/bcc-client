@@ -9,12 +9,11 @@
         </div>
       </div>
       <about />
-      <hr>
+      <hr />
       <speakers />
       <hr />
       <sponsors />
     </main>
-    <footer></footer>
   </div>
 </template>
 
