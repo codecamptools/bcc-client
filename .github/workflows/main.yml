@@ -1,0 +1,38 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Azure Login
+      uses: Azure/login@v1
+      with:
+        # Paste output of `az ad sp create-for-rbac` as value of secret variable: AZURE_CREDENTIALS
+        creds: 
+    - uses: actions/checkout@v1
+    - name: Run a one-line script
+      run: echo Running Build Command...
+    - name: Run a multi-line script
+      run: npm run build
+    - name: Azure key vault - Get Secrets
+      uses: Azure/get-keyvault-secrets@v1.0
+      with:
+        # Name of the azure key vault
+        keyvault: 
+        # Name of the secret to be fetched
+        secrets:  
+    - name: Azure Blob Storage Upload
+      uses: bacongobbler/azure-blob-storage-upload@v1.0.0
+      with:
+        # The name of the directory you want to upload
+        source_dir: ./dist
+        # The name of the storage account container these assets will be uploaded to
+        container_name: bccstaticsite
+        # The connection string for the storage account
+        connection_string: DefaultEndpointsProtocol=https;AccountName=bccstaticsite;AccountKey=nJp531kBA5PsIRPHcvzCMMjTKW8lykyMg4z5K48vDiiKdo8Y3CeInZHO+adNv4T4ntfrtmIqirNtM/vmSyzxAQ==;EndpointSuffix=core.windows.net
+        # extra arguments that can be passed to `az storage blob upload-batch`. Useful for passing flags like `--pattern` or `--destination-path`
+        extra_args: # optional
