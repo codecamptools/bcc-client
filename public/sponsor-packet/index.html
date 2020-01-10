@@ -7,7 +7,7 @@
     />
     <meta name="robots" content="noindex, nofollow" />
     <title>Boise Code Camp 2020 | Sponsor Packet</title>
-    <base href="/sponsor-packet">
+    <base href="/sponsor-packet/" />
     <link rel="stylesheet" href="css/theme.css" />
     <!-- Style Sheets -->
     <link
@@ -28,16 +28,8 @@
     />
 
     <!-- Favicon -->
-    <link
-      rel="shortcut icon"
-      href="logo.png"
-      type="image/x-icon"
-    />
-    <link
-      rel="icon"
-      href="logo.png"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+    <link rel="icon" href="logo.png" type="image/x-icon" />
 
     <!-- Fonts -->
 
@@ -130,9 +122,7 @@
               >
             </div>
             <div id="page_1180648" class="navbutton onclick_button">
-              <span id="page-name-font" class="inactive-font"
-                >Get Started</span
-              >
+              <span id="page-name-font" class="inactive-font">Get Started</span>
             </div>
 
             <div class="btn-toolbar mobile-hide">
@@ -676,14 +666,14 @@
 
     <script>
       function scrollToElem(e) {
-        active.classList.toggle("active")
-        active = e.target
-        active.classList.toggle("active")
+        active.classList.toggle("active");
+        active = e.target;
+        active.classList.toggle("active");
         let elem = document.getElementById("display_" + e.target.id);
         elem.scrollIntoView({ behavior: "smooth" });
       }
       let navs = document.querySelectorAll(".navbutton.onclick_button");
-      let active = navs[0]
+      let active = navs[0];
       navs.forEach(n => (n.onclick = scrollToElem));
     </script>
   </body>
