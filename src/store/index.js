@@ -7,7 +7,7 @@ export default new Vuex.Store({
   state: {
     event: {
       name: "Boise CodeCamp",
-      date: "March 21",
+      date: "March 22",
       dTime: new Date("2020-03-21 8:00"),
       location: "Boise, Id",
       venue: "Boise State University",
