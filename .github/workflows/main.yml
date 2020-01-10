@@ -9,10 +9,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Running Build Command...
-    - name: Run a multi-line script
-      run: npm run build
+    - name: Run build task...
+      run: npm run publish
     - name: Azure Blob Storage Upload
       uses: bacongobbler/azure-blob-storage-upload@v1.0.0
       with:
