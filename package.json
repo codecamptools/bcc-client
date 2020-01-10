@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "publish": "npm install && npm run build"
   },
   "dependencies": {
     "@bcwdev/quickvue": "0.0.8",
