@@ -277,7 +277,6 @@ a {
 
 /* General Element Styles */
 div.widget-holder {
-  margin-top: 30px;
   position: relative;
 }
 div.widget-holder div.action-holder {
@@ -306,18 +305,10 @@ div.inner-content div.loading-image {
   display: none;
 }
 
-/* Title  - THIS IS IN /CODERS/PROPOSAL/INCLUDE-BRAND-STYLE.PHP
-.title-output2 { color: #000000; font-family: 'Open Sans', sans-serif; font-size: 3em; font-weight: 800; letter-spacing: -0.06em; margin-top: 60px; }
-*/
 .title-top {
   margin-top: 100px;
 }
 
-/* Text Area */
-/*
-THIS IS IN /CODERS/PROPOSAL/INCLUDE-BRAND-STYLE.PHP
-div.editor-holder-view div.text-output-view { padding-top: 15px;  padding-bottom: 45px; 	font-family: 'Roboto', sans-serif; line-height: 35px; font-size: 1.2em; font-weight: 300 !important; }
-*/
 div.text-output ul,
 div.text-output ol {
   margin-top: 10px;
@@ -1193,6 +1184,43 @@ NOTIFICATIONS
   opacity: 0.7;
 }
 
+.pricing-table {
+  font-size: 0.75rem;
+  width: 150%;
+  margin-left: -25%;
+}
+.pricing-table tr,
+.pricing-table th,
+.pricing-table td {
+  text-align: center;
+  vertical-align: middle;
+}
+.pricing-table th {
+  align-items: center;
+}
+.pricing-table td {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.pricing-table td:first-child {
+  text-align: left;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.navigation,
+.main-content {
+  transition: all 0.3s linear;
+  will-change: left;
+}
+
+body.slide .navigation {
+  left: 0 !important;
+}
+body.slide .main-content {
+  left: 250px !important;
+}
+
 @media only screen and (max-width: 480px) {
   .sign-textbox {
     width: 100% !important;
@@ -1434,6 +1462,24 @@ NOTIFICATIONS
   }
 }
 
+.custom-control {
+  display: flex;
+  align-items: center;
+  line-height: 1.5rem;
+	cursor: pointer;
+	user-select: none;
+	margin-bottom: .25rem;
+}
+
+.form-tag {
+  background: #292f36;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+  font-family: "Work Sans";
+}
+
 @media only screen and (max-width: 1024px) {
   .mobile-hide {
     display: none;
@@ -1441,27 +1487,13 @@ NOTIFICATIONS
   .btn-toolbar a {
     width: 100%;
   }
+  .pricing-table {
+    font-size: 0.75rem;
+    width: 100%;
+    margin-left: 0;
+  }
 }
-
-.pricing-table {
-  font-size: 0.75rem;
-  margin: auto;
-}
-.pricing-table tr,
-.pricing-table th,
-.pricing-table td {
-  text-align: center;
-  vertical-align: middle;
-}
-.pricing-table th {
-  align-items: center;
-}
-.pricing-table td {
-  font-size: 2rem;
-  font-weight: bold;
-}
-.pricing-table td:first-child {
-  text-align: left;
-  font-size: 1rem;
-  font-weight: normal;
+.fade{
+	height: 0;
+	pointer-events: none;
 }
