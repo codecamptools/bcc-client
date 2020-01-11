@@ -6,7 +6,8 @@ body {
   background-color: #fff;
   text-decoration: none !important;
   overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+	scroll-behavior: smooth;
 }
 #container {
   width: 100%;
@@ -1225,18 +1226,19 @@ body.slide .main-content {
   width: 325px;
   border-radius: 10px;
   padding: 20px;
-  margin: 0.25rem;
+  margin: 0.5rem;
   cursor: pointer;
   transition: all 0.3s linear;
   position: relative;
   overflow: hidden;
+  user-select: none;
 }
 .sponsor-card:hover,
 .sponsor-card.selected {
   filter: brightness(1.05);
 }
 .sponsor-card.selected {
-  border: 5px solid #2a827f;
+  border: 4px solid #292f36;
 }
 
 .sponsor-card > h5 {
@@ -1252,7 +1254,6 @@ body.slide .main-content {
   font-weight: 900;
   position: absolute;
   margin-left: -6px;
-  pointer-events: none;
 }
 .sponsor-card > h4 {
   color: #292f36;
@@ -1263,7 +1264,7 @@ body.slide .main-content {
   border-width: 1px;
   border-color: rgba(0, 0, 0, 0.15);
   margin-top: 53px;
-  width: 0;
+  width: 10%;
   transition: width 0.35s ease-in-out;
 }
 
@@ -1286,9 +1287,7 @@ body.slide .main-content {
   background: linear-gradient(to bottom right, #eaffff, #e6e6e6);
   box-shadow: 3px 8px 15px rgba(186, 236, 245, 0.64);
   border: 4px solid #aad6ee63;
-}
-.platinum-card:hover {
-  filter: brightness(1.05) hue-rotate(25deg);
+  z-index: 2;
 }
 
 @media only screen and (max-width: 480px) {
@@ -1566,4 +1565,35 @@ body.slide .main-content {
 .fade {
   height: 0;
   pointer-events: none;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+}
+.sliding-steps {
+  min-height: 550px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.slide {
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  max-height: 540px;
+  overflow-y: auto;
+  width: 100%;
+}
+.slide-out-left {
+  transform: translate(-5000px);
+}
+.slide-out-right {
+  transform: translate(5000px);
 }
