@@ -1221,6 +1221,76 @@ body.slide .main-content {
   left: 250px !important;
 }
 
+.sponsor-card {
+  width: 325px;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 0.25rem;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  position: relative;
+  overflow: hidden;
+}
+.sponsor-card:hover,
+.sponsor-card.selected {
+  filter: brightness(1.05);
+}
+.sponsor-card.selected {
+  border: 5px solid #2a827f;
+}
+
+.sponsor-card > h5 {
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 40px;
+  font-weight: 900;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+}
+.sponsor-card > h6 {
+  color: rgba(0, 0, 0, 0.06);
+  font-size: 118px;
+  font-weight: 900;
+  position: absolute;
+  margin-left: -6px;
+  pointer-events: none;
+}
+.sponsor-card > h4 {
+  color: #292f36;
+  font-size: 40px;
+  margin-top: 53px;
+}
+.sponsor-card > hr {
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.15);
+  margin-top: 53px;
+  width: 0;
+  transition: width 0.35s ease-in-out;
+}
+
+.sponsor-card:hover hr,
+.sponsor-card.selected hr {
+  width: 100%;
+}
+
+.silver-card {
+  background: linear-gradient(to bottom right, #a3a3a3, #3d3d3d);
+  box-shadow: 3px 8px 15px rgba(204, 204, 204, 0.64);
+  border: 4px solid #dadada63;
+}
+.gold-card {
+  background: linear-gradient(to bottom right, #fff69d, #b88a32);
+  box-shadow: 3px 8px 15px rgba(227, 207, 130, 0.64);
+  border: 4px solid #eee8aa63;
+}
+.platinum-card {
+  background: linear-gradient(to bottom right, #eaffff, #e6e6e6);
+  box-shadow: 3px 8px 15px rgba(186, 236, 245, 0.64);
+  border: 4px solid #aad6ee63;
+}
+.platinum-card:hover {
+  filter: brightness(1.05) hue-rotate(25deg);
+}
+
 @media only screen and (max-width: 480px) {
   .sign-textbox {
     width: 100% !important;
@@ -1466,9 +1536,9 @@ body.slide .main-content {
   display: flex;
   align-items: center;
   line-height: 1.5rem;
-	cursor: pointer;
-	user-select: none;
-	margin-bottom: .25rem;
+  cursor: pointer;
+  user-select: none;
+  margin-bottom: 0.25rem;
 }
 
 .form-tag {
@@ -1493,7 +1563,7 @@ body.slide .main-content {
     margin-left: 0;
   }
 }
-.fade{
-	height: 0;
-	pointer-events: none;
+.fade {
+  height: 0;
+  pointer-events: none;
 }
