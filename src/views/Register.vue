@@ -34,8 +34,7 @@
             <p><strong>Skip the line register online?</strong></p>
             <p>
               Tickets for Boise Code Camp are limited so be sure to get yours to
-              secure your access. For all other information regarding Boise Code
-              Camp please visit our event website..
+              secure your access.
             </p>
             <div class="card-deck mb-3">
               <div
@@ -52,7 +51,7 @@
                   rel="noopener noreferrer"
                 >
                   <i class="fa fa-fw fa-calendar-check-o"></i>
-                  <small>Add Event</small>
+                  <small>Save Event</small>
                 </a>
               </div>
               <div
@@ -76,7 +75,7 @@
             <div>
               <!-- TODO Update this embed link -->
               <iframe
-                src="//eventbrite.com/tickets-external?eid=54602247793&amp;ref=etckt"
+                src="//eventbrite.com/tickets-external?eid=89480814525&amp;ref=etckt"
                 scrolling="auto"
                 allowtransparency="true"
                 width="100%"

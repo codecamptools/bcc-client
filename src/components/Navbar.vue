@@ -4,7 +4,19 @@
     :class="scrolled ? 'navbar-light bg-light z-depth' : 'navbar-dark'"
   >
     <router-link class="d-flex align-items-center" to="/">
-      <img height="45" src="../assets/logo.png" alt="Boise Code Camp Logo" />
+      <img
+        v-show="!scrolled"
+        height="55"
+        src="../assets/invert.svg"
+        alt="Boise Code Camp Logo"
+        class="drop-shadow"
+      />
+      <img
+        v-show="scrolled"
+        height="55"
+        src="../assets/logo.svg"
+        alt="Boise Code Camp Logo"
+      />
       <h4 class="m-0 ml-2 text-primary" :class="scrolled ? '' : 'text-shadow'">
         <span :class="scrolled ? 'text-dark' : 'text-white'">Boise</span
         >CodeCamp
@@ -80,5 +92,8 @@ export default {
 }
 .nav-link.router-link-exact-active {
   border-bottom: 2px solid var(--primary);
+}
+.drop-shadow{
+  filter: drop-shadow(2px 4px 6px #00000055)
 }
 </style>

@@ -4,17 +4,19 @@
     <main>
       <router-view />
     </main>
-    <footer class="mt-3"></footer>
+    <foot />
   </div>
 </template>
 
 <script>
 import Navbar from "./components/Navbar";
+import Foot from "./components/Foot";
 import SessionizeService from "./Services/SessionizeService";
 export default {
   name: "App",
   components: {
-    Navbar
+    Navbar,
+    Foot
   },
   mounted() {
     SessionizeService.loadData();
@@ -44,7 +46,7 @@ main {
 
 footer {
   border-top: 3px solid var(--primary);
-  height: 300px;
+  min-height: 300px;
   background: var(--dark);
   color: var(--light);
 }

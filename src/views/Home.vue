@@ -14,6 +14,26 @@
       <hr />
       <experience />
       <hr />
+      <venue />
+      <hr />
+      <div class="row mb-5">
+        <div class="col-sm-10">
+          <div class="h1 mt-3">
+            <div>
+              Thank you Sponsors
+            </div>
+          </div>
+          <div class="__summary large">
+            <div>
+              <p>
+                Code Camp is free and it wouldn't be if it wasn't for our
+                incredible sponsors. Make sure you stop by their booths to check
+                out the coolest swag and potential career opportunities.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
       <sponsors />
     </section>
   </div>
@@ -26,6 +46,7 @@ import About from "../components/About";
 import Speakers from "../components/Speakers";
 import Sponsors from "../components/Sponsors";
 import Experience from "../components/Experience";
+import Venue from "../components/Venue";
 
 export default {
   name: "home",
@@ -35,7 +56,8 @@ export default {
     About,
     Speakers,
     Experience,
-    Sponsors
+    Sponsors,
+    Venue
   }
 };
 </script>

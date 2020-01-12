@@ -3,10 +3,23 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import { QuickVue } from "@bcwdev/quickvue";
-// import "register-service-worker.js";
+import { Auth0Plugin } from "./Services/AuthService";
+import { domain, clientId } from "./authconfig";
 import "./components.js";
 
 Vue.use(QuickVue);
+Vue.use(Auth0Plugin, {
+  domain,
+  clientId,
+  onRedirectCallback: appState => {
+    router.push(
+      appState && appState.targetUrl
+        ? appState.targetUrl
+        : window.location.pathname
+    );
+  }
+});
+
 Vue.config.productionTip = false;
 
 // @ts-ignore

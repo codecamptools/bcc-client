@@ -1,6 +1,11 @@
 <template>
   <div class="sponsor">
-    <a class="d-flex flex-column justify-content-center align-items-center" :href="sponsor.url">
+    <a
+      class="d-flex flex-column justify-content-center align-items-center"
+      :href="sponsor.url"
+      target="_blank"
+      rel="noopener"
+    >
       <img :src="sponsor.logo" :alt="sponsor.name" />
     </a>
   </div>
@@ -19,7 +24,7 @@ export default {
 </script>
 
 <style>
-.sponsor a{
+.sponsor a {
   text-decoration: none;
 }
 .sponsor img {

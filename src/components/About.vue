@@ -36,6 +36,10 @@
           coexists with vibrant cultural experiences and easy access to
           recreation and surrounding cities and states.
         </p>
+        <p>
+          Boise is consistently ranked most popular places to live with its
+          people-friendly nature you'll be sure to enjoy your stay.
+        </p>
       </div>
       <div
         class="col-12 col-lg-6 offset-lg-1 order-1 order-lg-2 d-flex justify-content-center"

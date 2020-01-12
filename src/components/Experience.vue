@@ -64,18 +64,19 @@
                   </p>
                   <ul dir="ltr">
                     <li>
-                      Learn what other industry professionals are doing
+                      Learn what other industry professionals are doing today
                     </li>
                     <li>
-                      Visualizing the engineering project lifecycle with Aurecon
+                      Stay up to date with the latest web technologies
                     </li>
-                    <li>Digital twins: the power of a virtual visual copy</li>
+                    <li>
+                      Data collection and analysis via IoT, its more valuable
+                      than gold
+                    </li>
                   </ul>
                   <p>
-                    Get a group together at the AEC meetup lounge on the expo
-                    floor<br />
-                    Join your peers and Unity leaders for a night on the town at
-                    one of our Unite at Night venues in downtown Copenhagen
+                    Microservice Design will advance your API. Come learn the
+                    techniques and technologies.
                   </p>
                 </div>
               </div>
@@ -92,27 +93,27 @@
 
               <div class="large">
                 <div>
-                  <p><strong>A sample of the sessions just for you:</strong></p>
+                  <p>
+                    <strong
+                      >Blockchain is a great deal more than virtual currency,
+                      are you using it?</strong
+                    >
+                  </p>
                   <ul dir="ltr">
                     <li>
-                      How Volvo embraced real-time 3D and shook up the auto
-                      industry
+                      Enable entire decentralized apps and organizations
                     </li>
                     <li>
-                      Lexus &amp; Unity: Capturing the creative experience
-                      through a virtual lens
+                      NoSQL vs SQL how do you choose
                     </li>
                     <li>
-                      How Daimler used mobile mixed realities for production,
-                      training and sales
+                      Continuous access and cache control
                     </li>
                   </ul>
                   <p>
-                    Get a group together at the Automotive &amp; Manufacturing
-                    meetup lounge on the expo floor<br />
-                    Join your peers and Unity leaders for a night on the town at
-                    one of our Unite at Night venues in downtown Copenhagen<br />
-                    Test drive new technology on the expo floor
+                    Data access and control is the single most important thing
+                    to get right! Are you putting enough emphasis and education
+                    in this department?
                   </p>
                 </div>
               </div>
@@ -129,19 +130,24 @@
 
               <div class="large">
                 <div>
-                  <p><strong>A sample of the sessions just for you:</strong></p>
+                  <p>
+                    <strong
+                      >It's more important than you may think, and you don't
+                      need to be AAA:</strong
+                    >
+                  </p>
                   <ul dir="ltr">
-                    <li>What to expect in 2020: Unity roadmap</li>
-                    <li>Real-time VFX Workflows in "The Heretic"</li>
-                    <li>Converting your game to DOTS</li>
+                    <li>How to leverage your current skills</li>
+                    <li>Why media needs to be in everything</li>
+                    <li>
+                      It's time to disrupt the status quo, make your brand stick
+                      out
+                    </li>
                   </ul>
                   <p>
-                    Get a group together at the Games meetup lounge on the expo
-                    floor<br />
-                    Join your peers and Unity leaders for a night on the town at
-                    one of our Unite at Night venues in downtown Copenhagen<br />
-                    Meet with fellow developers and test out some games in the
-                    Made with Unity Showcase on the expo floor
+                    Customers these days have high expectations, your apps need
+                    to capture and hold their attention within the first few
+                    <em>milliseconds!</em>
                   </p>
                 </div>
               </div>
@@ -158,26 +164,22 @@
 
               <div class="large">
                 <div>
-                  <p><strong>A sample of the sessions just for you:</strong></p>
+                  <p><strong>Becoming serverless how less is more:</strong></p>
                   <ul dir="ltr">
                     <li>
-                      Real-time CG animation in Unity: unpacking the Sherman
-                      project
+                      Learn to soar with cloud controls
                     </li>
                     <li>
-                      Unity asset workflows for film and animation pipelines
+                      Implementing Continuous Integration and Development
                     </li>
                     <li>
-                      How TV's Treasure Trekkers set up a CG animation pipeline
+                      Survival in the global market
                     </li>
                   </ul>
                   <p>
-                    Get a group together at the Media &amp; Entertainment meetup
-                    lounge on the expo floor<br />
-                    Join your peers and Unity leaders for a night on the town at
-                    one of our Unite at Night venues in downtown Copenhagen<br />
-                    Get hands-on with the immersive storytelling exhibits on the
-                    expo floor
+                    Out with the old and in with the new, change everything
+                    everywhere. Break down the monolithics by choosing the right
+                    tools and configurations.
                   </p>
                 </div>
               </div>
