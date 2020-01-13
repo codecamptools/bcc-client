@@ -4,7 +4,7 @@
       <div class="row d-flex flex-wrap align-items-center">
         <div class="col-md-3 col-10 mx-auto pb-3 text-center">
           <img
-            src="../assets/invert.svg"
+            src="../assets/invert.png"
             alt="codecamp logo"
             class="img-fluid"
           />
@@ -25,7 +25,10 @@
                 <router-link to="volunteer">Volunteer</router-link>
               </li>
               <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                <router-link to="login">Manage</router-link>
+                <router-link v-if="$auth.isAuthenticated" to="dashboard"
+                  >Manage</router-link
+                >
+                <router-link v-else to="login">Login</router-link>
               </li>
             </ul>
           </div>
@@ -74,7 +77,7 @@ export default {
 </script>
 
 <style>
-footer{
+footer {
   font-size: 12pt;
 }
 </style>

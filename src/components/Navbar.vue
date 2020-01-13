@@ -7,14 +7,14 @@
       <img
         v-show="!scrolled"
         height="55"
-        src="../assets/invert.svg"
+        src="../assets/invert.png"
         alt="Boise Code Camp Logo"
         class="drop-shadow"
       />
       <img
         v-show="scrolled"
         height="55"
-        src="../assets/logo.svg"
+        src="../assets/logo.png"
         alt="Boise Code Camp Logo"
       />
       <h4 class="m-0 ml-2 text-primary" :class="scrolled ? '' : 'text-shadow'">

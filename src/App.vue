@@ -1,26 +1,13 @@
 <template>
   <div id="app">
-    <navbar />
-    <main>
-      <router-view />
-    </main>
-    <foot />
+    
+    <router-view />
   </div>
 </template>
 
 <script>
-import Navbar from "./components/Navbar";
-import Foot from "./components/Foot";
-import SessionizeService from "./Services/SessionizeService";
 export default {
-  name: "App",
-  components: {
-    Navbar,
-    Foot
-  },
-  mounted() {
-    SessionizeService.loadData();
-  }
+  name: "App"
 };
 </script>
 
