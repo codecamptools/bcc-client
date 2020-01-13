@@ -28,49 +28,7 @@ export default new Vuex.Store({
       session: "keynote",
       location: "Jordan Ballroom"
     },
-    sponsors: [
-      {
-        name: "Microsoft",
-        logo:
-          "https://www.stickpng.com/assets/images/58480fd7cef1014c0b5e4943.png",
-        url: "https://microsoft.com",
-        level: "platinum"
-      },
-      {
-        name: "CodeWorks",
-        logo:
-          "https://bcw.blob.core.windows.net/public/img/codeworks-circle-colored.png",
-        url: "https://boisecodeworks.com",
-        level: "platinum"
-      },
-      {
-        name: "Microsoft",
-        logo: "https://boisecodeworks.com/assets/img/logo_footer.png",
-        url: "https://microsoft.com",
-        level: "gold"
-      },
-      {
-        name: "Microsoft",
-        logo:
-          "https://bcw.blob.core.windows.net/public/img/www/assets/6766727554593956",
-        url: "https://microsoft.com",
-        level: "gold"
-      },
-      {
-        name: "Microsoft",
-        logo:
-          "https://bcw.blob.core.windows.net/public/img/www/assets/6766727554593956",
-        url: "https://microsoft.com",
-        level: "silver"
-      },
-      {
-        name: "Microsoft",
-        logo:
-          "https://bcw.blob.core.windows.net/public/img/www/assets/6766727554593956",
-        url: "https://microsoft.com",
-        level: "friend"
-      }
-    ],
+    sponsors: [],
     sessions: [],
     speakers: [],
     schedule: []
@@ -80,6 +38,9 @@ export default new Vuex.Store({
       state.sessions = data.sessions;
       state.speakers = data.speakers;
       state.schedule = data.schedule;
+    },
+    setSponsors(state, sponsors) {
+      state.sponsors = sponsors;
     }
   },
   actions: {},

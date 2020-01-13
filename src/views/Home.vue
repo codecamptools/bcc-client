@@ -16,7 +16,7 @@
       <hr />
       <venue />
       <hr />
-      <div class="row mb-5">
+      <div class="row mb-5" v-if="sponsors.length">
         <div class="col-sm-10">
           <div class="h1 mt-3">
             <div>
@@ -58,6 +58,11 @@ export default {
     Experience,
     Sponsors,
     Venue
+  },
+  computed: {
+    sponsors() {
+      return this.$store.state.sponsors;
+    }
   }
 };
 </script>

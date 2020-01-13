@@ -3,15 +3,21 @@
     <div
       class="row m-auto pl-3 pt-4"
       :class="level"
-      v-for="(sponsors, level)  in sponsorMap"
+      v-for="(sponsors, level) in sponsorMap"
       :key="level"
     >
       <div class="col-12" v-if="!hide(level)">
-        <small class="uppercase">{{level}}</small>
+        <small class="uppercase"
+          ><b>{{ level }}</b></small
+        >
       </div>
-      <div class="col mt-2 sponsor" v-for="s in sponsors" :key="s.id">
-        <sponsor :sponsor="s" v-if="level != 'friends'"/>
-        <small v-else>{{s.name}}</small>
+      <div
+        class="col-6 col-sm-2 mt-2 sponsor"
+        v-for="s in sponsors"
+        :key="s.id"
+      >
+        <sponsor :sponsor="s" v-if="level != 'friends'" />
+        <small v-else>{{ s.name }}</small>
       </div>
     </div>
   </div>

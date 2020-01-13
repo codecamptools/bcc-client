@@ -46,7 +46,6 @@ main {
 
 footer {
   border-top: 3px solid var(--primary);
-  min-height: 300px;
   background: var(--dark);
   color: var(--light);
 }
@@ -103,5 +102,15 @@ a:hover {
 
 *:hover > .show-on-hover {
   opacity: 1;
+}
+
+.close-modal-button {
+  font-size: 16pt;
+  padding: 1em;
+  color: rgb(165, 165, 165);
+  transition: color 0.3s linear;
+}
+.close-modal-button:hover {
+  color: grey;
 }
 </style>

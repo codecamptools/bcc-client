@@ -1,6 +1,6 @@
 <template>
   <section class="register">
-    <hero-sm bg="" />
+    <hero-sm />
     <div class="container-fluid pt-5 pl-lg-5 pr-lg-5 bg-white">
       <div class="row">
         <div class="col-12 col-lg-10 m-auto">

@@ -45,6 +45,16 @@
             {{ link.to.name }}
           </router-link>
         </li>
+        <li class="nav-item">
+          <a
+            href="/sponsor-packet/"
+            class="nav-link text-uppercase"
+            :class="scrolled ? 'text-dark' : 'text-light'"
+            title="Sponsor Packet"
+          >
+            Sponsors
+          </a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -64,13 +74,13 @@ export default {
       scrolled: false,
       links: [
         {
+          to: { name: "home" }
+        },
+        {
           to: { name: "register" }
         },
         {
           to: { name: "volunteer" }
-        },
-        {
-          to: { name: "sponsor" }
         }
       ]
     };
@@ -93,7 +103,7 @@ export default {
 .nav-link.router-link-exact-active {
   border-bottom: 2px solid var(--primary);
 }
-.drop-shadow{
-  filter: drop-shadow(2px 4px 6px #00000055)
+.drop-shadow {
+  filter: drop-shadow(2px 4px 6px #00000055);
 }
 </style>
