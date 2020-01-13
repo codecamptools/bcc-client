@@ -15,8 +15,8 @@
       <experience />
       <hr />
       <venue />
-      <hr />
       <div class="row mb-5" v-if="sponsors.length">
+        <hr />
         <div class="col-sm-10">
           <div class="h1 mt-3">
             <div>
@@ -33,8 +33,8 @@
             </div>
           </div>
         </div>
+        <sponsors />
       </div>
-      <sponsors />
     </section>
   </div>
 </template>
