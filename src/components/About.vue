@@ -83,6 +83,28 @@
           Boise Code Camp is representative of our community and the kids in our
           community are starting to code.
         </p>
+        <p>
+          The youth track is for the novice or experienced kid coder. In our
+          Scratch sessions, new coders will find a very approachable platform
+          and participants in the Hour of Code will find a very familiar
+          interface style. Experienced coders will find challenging material for
+          building a web site or can even sneak into an adult focused javscript
+          or robotics session and learn what it's like to be a professional
+          programmer. Also, what kid doesn't want to learn how to hack Minecraft
+          and hang out with other kids who are also interested in technology?
+        </p>
+        <p>
+          Kid coders as young as 6 years old up through high school can present
+          so if your kid is interested in presenting see our
+          <a
+            href="https://sessionize.com/boisecodecamp-2020/"
+            target="_blank"
+            rel="noopener"
+            title="call for speakers"
+          >
+            call for speakers page</a
+          >
+        </p>
       </div>
     </div>
     <manifesto />

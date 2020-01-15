@@ -48,6 +48,18 @@
         </li>
         <li class="nav-item">
           <a
+            href="https://sessionize.com/boisecodecamp-2020/"
+            target="_blank"
+            rel="noopener"
+            title="call for speakers"
+            class="nav-link text-uppercase"
+            :class="scrolled ? 'text-dark' : 'text-light'"
+          >
+            Speakers</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
             href="/sponsor-packet/"
             class="nav-link text-uppercase"
             :class="scrolled ? 'text-dark' : 'text-light'"
