@@ -23,6 +23,7 @@
       </h4>
     </router-link>
     <button
+      @click="mobile = !mobile"
       class="navbar-toggler"
       type="button"
       data-toggle="collapse"
@@ -71,6 +72,7 @@ export default {
   },
   data() {
     return {
+      mobile: false,
       scrolled: false,
       links: [
         {
@@ -105,5 +107,15 @@ export default {
 }
 .drop-shadow {
   filter: drop-shadow(2px 4px 6px #00000055);
+}
+
+@media screen and (max-width: 992px) {
+  #navbarSupportedContent {
+    background: var(--light);
+    border-radius: 5px;
+  }
+  #navbarSupportedContent.navbar-collapse.collapse.show li.nav-item a.nav-link {
+    color: var(--dark) !important;
+  }
 }
 </style>
