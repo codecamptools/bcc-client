@@ -25,6 +25,8 @@ export const useAuth0 = ({
         loading: true,
         isAuthenticated: false,
         user: {},
+        userInfo: {},
+        bearer: "",
         auth0Client: null,
         popupOpen: false,
         error: null
@@ -45,6 +47,7 @@ export const useAuth0 = ({
         }
 
         this.user = await this.auth0Client.getUser();
+        this.getUserData();
         this.isAuthenticated = true;
       },
       /** Handles the callback when logging in using a redirect */
@@ -76,6 +79,28 @@ export const useAuth0 = ({
 
       getTokenWithPopup(o) {
         return this.auth0Client.getTokenWithPopup(o);
+      },
+      async getUserData() {
+        try {
+          let token = await this.getTokenSilently();
+          this.bearer = "Bearer " + token;
+          let res = await fetch(`https://${options.domain}/userinfo`, {
+            headers: {
+              authorization: this.bearer
+            }
+          });
+
+          let userData = await res.json();
+          for (var key in userData) {
+            let keep = key;
+            if (key.includes("https")) {
+              keep = keep.slice(keep.lastIndexOf("/") + 1);
+            }
+            this.$set(this.userInfo, keep, userData[key]);
+          }
+        } catch (e) {
+          console.error(e);
+        }
       },
       /** Logs the user out and removes their session on the authorization server */
       logout(o) {
@@ -120,24 +145,23 @@ export const useAuth0 = ({
 };
 
 export const authGuard = (to, from, next) => {
-  const authService = getInstance();
   const fn = () => {
     // If the user is authenticated, continue with the route
-    if (authService.isAuthenticated) {
+    if (instance.isAuthenticated) {
       return next();
     }
 
     // Otherwise, log in
-    authService.loginWithRedirect({ appState: { targetUrl: to.fullPath } });
+    instance.loginWithRedirect({ appState: { targetUrl: to.fullPath } });
   };
 
   // If loading has already finished, check our auth state using `fn()`
-  if (!authService.loading) {
+  if (!instance.loading) {
     return fn();
   }
 
   // Watch for the loading property to change before we check isAuthenticated
-  authService.$watch("loading", loading => {
+  instance.$watch("loading", loading => {
     if (loading === false) {
       return fn();
     }

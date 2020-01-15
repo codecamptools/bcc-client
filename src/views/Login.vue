@@ -1,22 +1,20 @@
 <template>
   <div class="login-page">
-    <div class="w-50">
-      <div>
-        <img src="../assets/invert.png" alt="Code Camp Logo" />
-      </div>
-      <div class="w-100" v-if="!$auth.loading">
-        <!-- show login when not authenticated -->
-        <button
-          class="btn btn-info btn-block"
-          v-if="!$auth.isAuthenticated"
-          @click="login"
-        >
-          Log in
-        </button>
-        <router-link v-else class="btn btn-info btn-block" to="dashboard"
-          >Go to Dashboard</router-link
-        >
-      </div>
+    <div>
+      <img class="img-fluid" src="../assets/invert.png" alt="Code Camp Logo" />
+    </div>
+    <div class="w-100" v-if="!$auth.loading" style="max-width:273px">
+      <!-- show login when not authenticated -->
+      <button
+        class="btn btn-info btn-block"
+        v-if="!$auth.isAuthenticated"
+        @click="login"
+      >
+        Log in
+      </button>
+      <router-link v-else class="btn btn-info btn-block" to="dashboard"
+        >Go to Dashboard</router-link
+      >
     </div>
   </div>
 </template>
@@ -25,8 +23,14 @@
 export default {
   name: "Login",
   methods: {
-    login() {
-      this.$auth.loginWithRedirect();
+    async login() {
+      try {
+        let success = await this.$auth.loginWithPopup();
+        console.log(success);
+        this.$router.push("dashboard");
+      } catch (e) {
+        console.log(e);
+      }
     }
   }
 };
@@ -39,5 +43,6 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 </style>

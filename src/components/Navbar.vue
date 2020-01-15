@@ -37,6 +37,15 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto text-right">
+        <li class="nav-item" v-if="$auth.isAuthenticated">
+          <router-link
+            title="dashboard"
+            class="nav-link text-uppercase"
+            :class="scrolled ? 'text-dark' : 'text-light'"
+            to="dashboard"
+            >Dashboard
+          </router-link>
+        </li>
         <li class="nav-item" v-for="link in links" :key="link.to.name">
           <router-link
             class="nav-link text-uppercase"
