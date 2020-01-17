@@ -3,8 +3,8 @@
     <div
       class="row px-md-4 d-flex flex-wrap flex-column flex-lg-row flex-grow-1"
     >
-      <dashboard-nav class="col-12 col-lg-3" />
-      <div class="col-12 col-lg-9 p-0 mt-3 card shadow">
+      <dashboard-nav class="col-12 col-lg-3 col-xl-2 offset-xl-1" />
+      <div class="col-12 col-lg-9 col-xl-8 p-0 mt-3 card shadow">
         <div class="mt-3">
           <div class="card-title p-3 text-capitalize">
             <h4 class="m-0 font-normal">{{ route }}</h4>
