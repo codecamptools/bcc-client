@@ -12,7 +12,10 @@
       >
         Log in
       </button>
-      <router-link v-else class="btn btn-info btn-block" to="dashboard"
+      <router-link
+        v-else
+        class="btn btn-info btn-block"
+        :to="{ name: 'profile' }"
         >Go to Dashboard</router-link
       >
     </div>
@@ -26,8 +29,7 @@ export default {
     async login() {
       try {
         let success = await this.$auth.loginWithPopup();
-        console.log(success);
-        this.$router.push("dashboard");
+        this.$router.push({ name: "profile" });
       } catch (e) {
         console.log(e);
       }

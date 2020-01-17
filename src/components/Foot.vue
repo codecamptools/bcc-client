@@ -25,7 +25,9 @@
                 <router-link to="volunteer">Volunteer</router-link>
               </li>
               <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                <router-link v-if="$auth.isAuthenticated" to="dashboard"
+                <router-link
+                  v-if="$auth.isAuthenticated"
+                  :to="{ name: 'profile' }"
                   >Manage</router-link
                 >
                 <router-link v-else to="login">Login</router-link>
@@ -63,8 +65,8 @@
     </div>
     <div class="bg-white py-3 small">
       <div class="d-flex justify-content-center align-items-center">
-        <a class="mr-4" href="../privacy.html">Privacy &amp; terms</a>
-        <a href="../sitemap.xml">Sitemap</a>
+        <a class="mr-4" href="/privacy.html">Privacy &amp; terms</a>
+        <a href="/sitemap.xml">Sitemap</a>
       </div>
     </div>
   </footer>

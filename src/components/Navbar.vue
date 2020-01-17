@@ -42,7 +42,7 @@
             title="dashboard"
             class="nav-link text-uppercase"
             :class="scrolled ? 'text-dark' : 'text-light'"
-            to="dashboard"
+            :to="{ name: 'profile' }"
             >Dashboard
           </router-link>
         </li>

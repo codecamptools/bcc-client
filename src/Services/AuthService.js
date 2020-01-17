@@ -26,6 +26,7 @@ export const useAuth0 = ({
         isAuthenticated: false,
         user: {},
         userInfo: {},
+        identity: {},
         bearer: "",
         auth0Client: null,
         popupOpen: false,
@@ -75,13 +76,52 @@ export const useAuth0 = ({
       getTokenSilently(o) {
         return this.auth0Client.getTokenSilently(o);
       },
-      /** Gets the access token using a popup window */
+      hasPermissions(permissions) {
+        if (!Array.isArray(permissions)) {
+          permissions = [permissions];
+        }
+        if (!this.identity.permissions) {
+          return false;
+        }
+        while (permissions.length) {
+          let next = permissions.pop();
+          let found = this.identity.permissions.find(p => p == next);
+          if (!found) {
+            return false;
+          }
+        }
+        return true;
+      },
+      hasRoles(roles) {
+        if (!Array.isArray(roles)) {
+          roles = [roles];
+        }
+        if (!this.userInfo.roles) {
+          return false;
+        }
+        while (roles.length) {
+          let next = roles.pop();
+          let found = this.userInfo.roles.find(r => r == next);
+          if (!found) {
+            return false;
+          }
+        }
+        return true;
+      },
 
+      async getIdentityClaims() {
+        let token = await this.auth0Client.getTokenSilently();
+        this.identity = JSON.parse(decodeToken(token));
+        return this.identity;
+      },
+
+      /** Gets the access token using a popup window */
       getTokenWithPopup(o) {
         return this.auth0Client.getTokenWithPopup(o);
       },
       async getUserData() {
         try {
+          this.auth0Client;
           let token = await this.getTokenSilently();
           this.bearer = "Bearer " + token;
           let res = await fetch(`https://${options.domain}/userinfo`, {
@@ -181,6 +221,43 @@ export const onAuth = () => {
     });
   });
 };
+
+function b64DecodeUnicode(str) {
+  return decodeURIComponent(
+    atob(str).replace(/(.)/g, function(m, p) {
+      var code = p
+        .charCodeAt(0)
+        .toString(16)
+        .toUpperCase();
+      if (code.length < 2) {
+        code = "0" + code;
+      }
+      return "%" + code;
+    })
+  );
+}
+function decodeToken(str = "") {
+  str = str.split(".")[1];
+  var output = str.replace(/-/g, "+").replace(/_/g, "/");
+  switch (output.length % 4) {
+    case 0:
+      break;
+    case 2:
+      output += "==";
+      break;
+    case 3:
+      output += "=";
+      break;
+    default:
+      throw "Illegal base64url string!";
+  }
+
+  try {
+    return b64DecodeUnicode(output);
+  } catch (err) {
+    return atob(output);
+  }
+}
 
 // Create a simple Vue plugin to expose the wrapper object throughout the application
 export const Auth0Plugin = {

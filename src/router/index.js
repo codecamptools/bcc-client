@@ -1,14 +1,13 @@
+//@ts-nocheck
 import Vue from "vue";
 import VueRouter from "vue-router";
-import { authGuard, onAuth } from "../Services/AuthService";
 import Public from "../views/Public.vue";
 import Home from "../views/Home.vue";
 import Register from "../views/Register.vue";
 import Sponsor from "../views/Sponsor.vue";
 import Volunteer from "../views/Volunteer.vue";
 import Login from "../views/Login.vue";
-import Manager from "../views/Manager.vue";
-import Dashboard from "../views/Dashboard.vue";
+import dashboardRoutes from "../views/Dashboard/dashboard-routes";
 
 Vue.use(VueRouter);
 
@@ -44,17 +43,7 @@ const routes = [
     name: "login",
     component: Login
   },
-  {
-    path: "/dashboard",
-    component: Manager,
-    beforeEnter: authGuard,
-    children: [
-      {
-        path: "",
-        component: Dashboard
-      }
-    ]
-  },
+  dashboardRoutes,
   {
     path: "*",
     redirect: "/"

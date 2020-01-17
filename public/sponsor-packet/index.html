@@ -1042,6 +1042,20 @@
                               <hr />
                             </div>
                           </div>
+                          <div
+                            class="my-2 d-flex align-items-center justify-content-center"
+                          >
+                            <div
+                              id="friend"
+                              class="text-muted sponsor-card"
+                              onclick="setSponsorLevel('friend')"
+                            >
+                              <h5>Friend</h5>
+                              <h6>100</h6>
+                              <h4>$100</h4>
+                              <hr />
+                            </div>
+                          </div>
                         </div>
                       </div>
                       <div class="slide slide-out-right" id="step-2">
@@ -1097,6 +1111,7 @@
                                     type="file"
                                     class="custom-file-input"
                                     id="company-logo"
+                                    name="logo"
                                     onchange="setLogo()"
                                   />
                                   <label
@@ -1154,168 +1169,6 @@
       </li>
     </ul>
     <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
-
-    <script>
-      function scrollToElem(e) {
-        setActiveLink(e.target);
-        let hash = e.target.id.slice(1);
-        let elem = document.getElementById(hash);
-        elem.scrollIntoView({ behavior: "smooth" });
-      }
-      let navs = document.querySelectorAll(".navbutton.onclick_button");
-      let active = navs[0];
-      navs.forEach(n => (n.onclick = scrollToElem));
-
-      function setActiveLink(next) {
-        active.classList.toggle("active");
-        active = next;
-        active.classList.toggle("active");
-      }
-      function toggleSidebar() {
-        let elem = document.querySelector(".navigation");
-        elem.classList.toggle("hidden");
-        document.body.classList.toggle("slide");
-      }
-
-      function updateTotal(price) {
-        let totalElem = document.getElementById("total");
-        let total = price || 0;
-        totalElem.innerText = Number(total).toLocaleString("en");
-      }
-
-      let sponsorLevel;
-      let activeSponsorElem;
-      let ppUpgrade;
-      let total = 0;
-      function setSponsorLevel(level) {
-        if (sponsorLevel == level) {
-          return;
-        }
-        sponsorLevel = level;
-        if (activeSponsorElem) {
-          activeSponsorElem.classList.remove("selected");
-        }
-        activeSponsorElem = document.getElementById(level);
-        activeSponsorElem.classList.add("selected");
-        let sponsorLevelElem = document.getElementById("sponsor-level");
-        sponsorLevelElem.innerText = level;
-        let form = document.getElementById("sponsor-payment-form");
-        total = 0;
-        switch (level) {
-          case "platinum":
-            form.ppupgrade.forEach(elem =>
-              elem.id == "platinum-only" ? (elem.checked = true) : null
-            );
-            total = 1500;
-            break;
-          case "gold":
-            form.ppupgrade.forEach(elem => (elem.checked = false));
-            total = 1000;
-            break;
-          case "silver":
-            form.ppupgrade.forEach(elem => (elem.checked = false));
-            total = 500;
-            break;
-        }
-        updateTotal(total);
-      }
-      function setPPUpgrade() {
-        ppUpgrade = event.target.id;
-        total = 1500;
-        let sponsorLevelElem = document.getElementById("sponsor-level");
-        sponsorLevelElem.innerText = "Platinum Plus";
-        switch (ppUpgrade) {
-          case "title":
-            total = 15000;
-            break;
-          case "shirt":
-            total = 4500;
-            break;
-          case "keynote":
-            total = 3750;
-            break;
-          case "lunch":
-            total = 3500;
-            break;
-          case "breakfast":
-            total = 2500;
-            break;
-          case "youth":
-            total = 2000;
-            break;
-          default:
-            sponsorLevelElem.innerText = "Platinum";
-        }
-        updateTotal(total);
-      }
-
-      let step = 1;
-      function goBack() {
-        step--;
-        event.target.disabled = false;
-        event.target.nextElementSibling.disabled = false;
-        let currElem = document.getElementById("step-" + (step + 1));
-        let prevElem = document.getElementById("step-" + step);
-        currElem.classList.add("slide-out-right");
-        prevElem.classList.remove("slide-out-left");
-        if (step <= 1) {
-          step = 1;
-          event.target.disabled = true;
-        }
-      }
-
-      function goNext() {
-        if (total == 0) {
-          return;
-        }
-        step++;
-        event.target.disabled = false;
-        event.target.previousElementSibling.disabled = false;
-        let currElem = document.getElementById("step-" + (step - 1));
-        let nextElem = document.getElementById("step-" + step);
-        currElem.classList.add("slide-out-left");
-        nextElem.classList.remove("slide-out-right");
-        if (step == 3) {
-          showPaypal();
-        }
-        if (step >= 3) {
-          step = 3;
-          event.target.disabled = true;
-        }
-      }
-
-      function showPaypal() {
-        document.getElementById("paypal-button-container").innerHTML = "";
-        paypal
-          .Buttons({
-            createOrder: function(data, actions) {
-              return actions.order.create({
-                purchase_units: [
-                  {
-                    amount: {
-                      value: total
-                    }
-                  }
-                ]
-              });
-            },
-            onError: function(err) {
-              // Show an error page here, when an error occurs
-            },
-            // Finalize the transaction
-            onApprove: function(data, actions) {
-              return actions.order.capture().then(function(details) {
-                // Show a success message to the buyer
-                alert(
-                  "Transaction completed by " +
-                    details.payer.name.given_name +
-                    "!"
-                );
-              });
-            }
-          })
-          .render("#paypal-button-container");
-      }
-    </script>
+    <script src="app.js"></script>
   </body>
 </html>
