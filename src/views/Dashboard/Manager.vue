@@ -60,7 +60,13 @@ export default {
       this.$auth.logout({
         returnTo: window.location.origin
       });
+    },
+    getRoles() {
+      this.$auth.getUserData();
     }
+  },
+  mounted(){
+    this.getRoles()
   }
 };
 </script>

@@ -1,6 +1,8 @@
 <template>
   <div class="dashboard flex-grow-1 d-flex flex-column">
-    <div class="row px-md-4 d-flex flex-wrap flex-column flex-lg-row flex-grow-1">
+    <div
+      class="row px-md-4 d-flex flex-wrap flex-column flex-lg-row flex-grow-1"
+    >
       <dashboard-nav class="col-12 col-lg-3" />
       <div class="col-12 col-lg-9 p-0 mt-3 card shadow">
         <div class="mt-3">
@@ -21,26 +23,10 @@
 import DashboardNav from "./components/DashboardNav";
 export default {
   name: "Dashboard",
-  data() {
-    return {
-      bearerToken: "",
-      tokens: {}
-    };
-  },
   computed: {
     route() {
       return this.$route.name;
     }
-  },
-  methods: {
-    getRoles() {
-      this.$auth.getUserData();
-    }
-  },
-  async mounted() {
-    this.getRoles();
-    this.tokens = await this.$auth.getIdentityClaims();
-    this.bearerToken = await this.$auth.getTokenSilently();
   },
   components: {
     DashboardNav

@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@auth0/auth0-spa-js": "^1.6.1",
+    "@bcwdev/auth0-vue": "0.0.1",
     "@bcwdev/quickvue": "0.0.8",
     "axios": "^0.19.1",
     "core-js": "^3.3.2",

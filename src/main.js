@@ -3,7 +3,7 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import { QuickVue } from "@bcwdev/quickvue";
-import { Auth0Plugin } from "./Services/AuthService";
+import { Auth0Plugin } from "@bcwdev/auth0-vue";
 import { domain, clientId, audience } from "./authconfig";
 import "./components.js";
 

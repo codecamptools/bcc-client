@@ -1,5 +1,5 @@
 //@ts-nocheck
-import { authGuard } from "../../Services/AuthService";
+import { authGuard } from "@bcwdev/auth0-vue";
 import Manager from "./Manager.vue";
 import Dashboard from "./Dashboard.vue";
 import Profile from "./Profile.vue";
@@ -46,7 +46,6 @@ export default {
   children: [
     {
       path: "/dashboard",
-      name: "dashboard",
       component: Dashboard,
       children: [
         ...USER_NAVIGATION,
