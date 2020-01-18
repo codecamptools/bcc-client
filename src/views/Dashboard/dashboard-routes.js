@@ -3,6 +3,11 @@ import { authGuard } from "@bcwdev/auth0-vue";
 import Manager from "./Manager.vue";
 import Dashboard from "./Dashboard.vue";
 import Profile from "./Profile.vue";
+import Events from "./Events.vue";
+import Sponsors from "./Sponsors.vue";
+import Notes from "./Notes.vue";
+import Feedback from "./Feedback.vue";
+import Schedule from "./Schedule.vue";
 
 export const USER_NAVIGATION = [
   {
@@ -13,29 +18,29 @@ export const USER_NAVIGATION = [
   {
     name: "schedule",
     path: "schedule",
-    component: Profile
+    component: Schedule
   },
   {
     name: "notes",
     path: "notes",
-    component: Profile
+    component: Notes
   },
   {
     name: "feedback",
     path: "feedback",
-    component: Profile
+    component: Feedback
   }
 ];
 export const EVENT_NAVIGATION = [
   {
     name: "events",
     path: "events",
-    component: Profile
+    component: Events
   },
   {
     name: "sponsors",
     path: "sponsors",
-    component: Profile
+    component: Sponsors
   }
 ];
 
