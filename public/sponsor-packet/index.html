@@ -1090,9 +1090,18 @@
                                 <input
                                   type="text"
                                   class="form-control"
-                                  id="email"
+                                  name="email"
                                   placeholder="Email"
                                   required
+                                />
+                              </div>
+                              <div class="col-12 col-md-10 m-auto pb-3">
+                                <label for="url">Company Name</label>
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  name="company"
+                                  placeholder="Company Name"
                                 />
                               </div>
                               <div class="col-12 col-md-10 m-auto pb-3">
@@ -1100,17 +1109,22 @@
                                 <input
                                   type="url"
                                   class="form-control"
-                                  id="url"
+                                  name="url"
                                   placeholder="Company Website"
                                 />
                               </div>
                               <div class="col-12 col-md-10 m-auto pb-3">
                                 <label>Company Logo</label>
+                                <img
+                                  id="sponsor-logo"
+                                  class="d-none mb-2 rounded"
+                                  height="150"
+                                />
                                 <div class="custom-file">
                                   <input
                                     type="file"
                                     class="custom-file-input"
-                                    id="company-logo"
+                                    name="company-logo"
                                     name="logo"
                                     onchange="setLogo()"
                                   />
@@ -1168,7 +1182,11 @@
         </div>
       </li>
     </ul>
-    <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
+    <!-- SANDBOX KEY -->
+    <!-- AcQGuJA7cj8KAxLYOZdx0ErjFMie_Nrvw9bBVlT4D_nU9JgbMnohCygtkKnkm42T5FZ1bCopHOD30Mvj -->
+    <!-- LIVE KEY -->
+    <!-- AaTYI0NNZElRP8vFZFR9rhIAWzV_tsuOySy3Zul9uCipKdJBFdRImI8EFG3c7Id9Gu0h1uHcRU-fpk-I -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AcQGuJA7cj8KAxLYOZdx0ErjFMie_Nrvw9bBVlT4D_nU9JgbMnohCygtkKnkm42T5FZ1bCopHOD30Mvj&currency=USD"></script>
     <script src="app.js"></script>
   </body>
 </html>

@@ -134,13 +134,21 @@ function setLogo() {
   let logofile = event.target.files[0];
   if (!logofile) {
     logo64 = undefined;
+    let elem = document.getElementById("sponsor-logo");
+    elem.classList.remove("d-block");
+    elem.classList.add("d-none");
     return;
   }
 
   let fr = new FileReader();
-  fr.onload(() => {
+
+  fr.onloadend = () => {
     logo64 = fr.result;
-  });
+    let elem = document.getElementById("sponsor-logo");
+    elem.setAttribute("src", logo64.toString());
+    elem.classList.remove("d-none");
+    elem.classList.add("d-block");
+  };
   fr.readAsDataURL(logofile);
 }
 
@@ -161,7 +169,7 @@ function showPaypal() {
         });
       },
       onError: function(err) {
-        // Show an error page here, when an error occurs
+        // TODO Show an error page here, when an error occurs
       },
       // Finalize the transaction
       onApprove: function(data, actions) {
@@ -170,22 +178,45 @@ function showPaypal() {
           let form = document.getElementById("sponsor-payment-form");
           let userDetails = {
             name: form.name.value,
-            email: form.email.value,
-            url: form.url.value,
-            logo: logo64
+            email: form.email.value
           };
-          fetch("http://localhost:", {
+          let companyDetails = {
+            url: form.url.value,
+            name: form.company.value
+          };
+          let sponsorDetails = {
+            level: sponsorLevel,
+            ppUpgrade
+          };
+          debugger;
+          let url = "/api/sponsors/validate-purchase/" + data.orderID;
+          if (window.location.host.includes("localhost:")) {
+            url = "http://localhost:5000" + url;
+          }
+          fetch(url, {
             method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
             body: JSON.stringify({
+              eventDetails: {
+                name: "boisecodecamp",
+                year: 2020
+              },
               userDetails,
               paypalDetails,
-              sponsorLevel,
-              ppUpgrade
+              companyDetails,
+              sponsorDetails,
+              logo64
             })
-          });
-          alert(
-            "Transaction completed by " + details.payer.name.given_name + "!"
-          );
+          })
+            .then(res => res.json())
+            .then(data => {
+              console.log(data);
+              if (data.error) {
+                // TODO show error
+              }
+            });
         });
       }
     })

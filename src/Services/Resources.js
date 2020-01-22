@@ -11,7 +11,8 @@ export class Resources {
       let res = await fetch(url, {
         method: "GET",
         headers: {
-          authorization: authService.bearer
+          authorization: authService.bearer,
+          "Content-Type": "application/json"
         },
         ...options
       });
