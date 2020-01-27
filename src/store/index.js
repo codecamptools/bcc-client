@@ -15,16 +15,16 @@ export default new Vuex.Store({
     },
     keynote: {
       speaker: {
-        name: "Jerry Nixon",
-        title: "Software Evangilist",
+        name: "Laurent Bugnion",
+        title: "Senior Cloud Developer Advocate",
         company: "Microsoft",
         img:
-          "https://visualstudiomagazine.com/articles/2018/07/17/~/media/ECG/VSLive/2018/chicago/speakers/Nixon_Jerry_2.png"
+          "https://avatars1.githubusercontent.com/u/4922457?s=400&v=4"
       },
-      title: "Quantum Computing and the Future of Software Development",
+      title: "25 years ago, software development was very different… or was it?",
       abstract:
-        "Developers like you and I need to realize this is inevitable, and we need to recognize that these changes are just starting and we can get in on the ground floor and thrive through integration and simply not resisting.",
-      time: "8:30 - 9:30 AM",
+        "Development environments were maybe not that powerful, we were running on a lot less RAM and CPU, but we were already architecting systems, converting code in bytes, running machines and connecting them with networks. We maybe didn't have all these fancy SPAs and Clouds, but we had Internet and a web browser. A few years later we would even get JavaScript and start coding pretty cool web apps and the world would never quite be the same anymore.",
+      time: "8:45 - 9:30 AM",
       session: "keynote",
       location: "Jordan Ballroom"
     },

@@ -1,6 +1,12 @@
 import { getInstance } from "@bcwdev/auth0-vue";
 
-const authService = getInstance();
+class ResourceError extends Error {
+  constructor(msg, response) {
+    super(msg);
+    this.response = response;
+    this.status = response.status;
+  }
+}
 
 export class Resources {
   static async request(url, options = {}) {
@@ -8,6 +14,7 @@ export class Resources {
       if (!url.includes("//")) {
         url = window.location.origin + url[0] == "/" ? url : "/" + url;
       }
+      let authService = getInstance();
       let res = await fetch(url, {
         method: "GET",
         headers: {
@@ -16,7 +23,11 @@ export class Resources {
         },
         ...options
       });
-      return await res.json();
+      let json = await res.json();
+      if (res.ok) {
+        return json;
+      }
+      throw new ResourceError(json.message, res);
     } catch (e) {
       throw e;
     }

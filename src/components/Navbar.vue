@@ -36,7 +36,12 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-right">
+      <ul
+        class="navbar-nav ml-auto text-right"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+      >
         <li class="nav-item" v-if="$auth.isAuthenticated">
           <router-link
             title="dashboard"
