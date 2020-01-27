@@ -211,11 +211,7 @@ export default {
       try {
         this.error = {};
         this.sending = true;
-        let url = "api/volunteers";
-        if (window.location.hostname.includes("localhost")) {
-          url = "//localhost:5000/" + url;
-        }
-        let res = await Resources.post(url, this.volunteer);
+        let res = await Resources.post("api/volunteers", this.volunteer);
         this.volunteer = {
           shirtSize: "--- Shirt Size ---",
           preferedShift: "--- Volunteer Shift ---"

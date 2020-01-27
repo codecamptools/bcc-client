@@ -9,7 +9,7 @@
           <div class="card-title p-3 text-capitalize">
             <h4 class="m-0 font-normal">{{ route }}</h4>
           </div>
-          <hr />
+          <hr class="m-0" />
           <div class="card-body">
             <router-view />
           </div>

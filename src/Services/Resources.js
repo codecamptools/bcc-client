@@ -9,10 +9,13 @@ class ResourceError extends Error {
 }
 
 export class Resources {
+  static baseURL = window.location.host.includes("localhost:")
+    ? "//localhost:5000/"
+    : "";
   static async request(url, options = {}) {
     try {
       if (!url.includes("//")) {
-        url = window.location.origin + url[0] == "/" ? url : "/" + url;
+        url = Resources.baseURL + (url[0] == "/" ? url : "/" + url);
       }
       let authService = getInstance();
       let res = await fetch(url, {

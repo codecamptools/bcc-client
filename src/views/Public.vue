@@ -11,15 +11,12 @@
 <script>
 import Navbar from "../components/Navbar";
 import Foot from "../components/Foot";
-import SessionizeService from "../Services/SessionizeService";
+
 export default {
   name: "public",
   components: {
     Navbar,
     Foot
-  },
-  mounted() {
-    SessionizeService.loadData();
   }
 };
 </script>

@@ -104,7 +104,7 @@ export default {
   },
   computed: {
     currentEvent() {
-      return this.$store.state.currentEvent;
+      return this.$store.state.event;
     },
     events() {
       return this.$store.state.events;
@@ -117,6 +117,7 @@ export default {
         name: "Boise Code Camp " + today.getFullYear(),
         start: today,
         end: today,
+        year: today.getFullYear(),
         location: "Boise State University",
         address: "1700 W University Dr, Boise, ID 83725"
       };

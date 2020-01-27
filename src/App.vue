@@ -1,13 +1,17 @@
 <template>
   <div id="app">
-    
     <router-view />
   </div>
 </template>
 
 <script>
+import SessionizeService from "./Services/SessionizeService";
 export default {
-  name: "App"
+  name: "App",
+  mounted() {
+    SessionizeService.loadData();
+    this.$store.dispatch("loadData");
+  }
 };
 </script>
 

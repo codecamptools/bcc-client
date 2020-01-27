@@ -29,7 +29,9 @@ export default {
     async login() {
       try {
         let success = await this.$auth.loginWithPopup();
-        this.$router.push({ name: "profile" });
+        if(this.$auth.user.sub){
+          this.$router.push({ name: "profile" });
+        }
       } catch (e) {
         console.log(e);
       }

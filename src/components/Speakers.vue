@@ -2,11 +2,16 @@
   <div class="schedule row m-auto p-md-3 mt-5">
     <div class="col-12 mb-5">
       <h2>Speakers</h2>
+      <p class="m-0">
+        <a class="border-top pt-1 small" href="/schedule" target="_blank" rel="noopener" title="Schedule"
+          >Schedule</a
+        >
+      </p>
     </div>
     <div class="col-12">
       <div class="card-deck justify-content-center">
         <div
-          class="card col-sm-6 col-md-4 col-xl-2"
+          class="card p-0 col-sm-6 col-md-4 col-xl-2"
           v-for="speaker in speakers"
           :key="speaker.id"
         >
@@ -95,7 +100,7 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.schedule .nav-tabs {
+/* .schedule .nav-tabs {
   position: sticky;
   top: 56px;
   z-index: 2;
@@ -129,7 +134,7 @@ export default {
     display: flex;
     flex-wrap: nowrap;
   }
-}
+} */
 .grayscale {
   filter: grayscale(1);
 }

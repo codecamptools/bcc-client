@@ -20,11 +20,11 @@ export const USER_NAVIGATION = [
     path: "schedule",
     component: Schedule
   },
-  {
-    name: "notes",
-    path: "notes",
-    component: Notes
-  },
+  // {
+  //   name: "notes",
+  //   path: "notes",
+  //   component: Notes
+  // },
   {
     name: "feedback",
     path: "feedback",

@@ -1,7 +1,7 @@
 <template>
-  <div class="p-2 text-center h-100 d-flex flex-column justify-content-between">
+  <div class="text-center h-100 d-flex flex-column justify-content-between">
     <img
-      class="rounded img-fluid grayscale action"
+      class="rounded img-fluid grayscale action w-75 m-2 align-self-center"
       :src="speaker.profilePicture"
       @error="
         speaker.profilePicture = `http://tinygraphs.com/squares/${speaker.fullName}`
@@ -9,7 +9,7 @@
       :alt="speaker.fullName"
       @click="setActive(speaker)"
     />
-    <div class="card-body">
+    <div class="card-body p-2">
       <div class="card-title text-primary action" @click="setActive(speaker)">
         {{ speaker.fullName }}
       </div>
