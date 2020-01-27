@@ -71,7 +71,7 @@
                 Volunteer Sign Up
               </h4>
               <div class="container">
-                <div class="form-group d-flex flex-wrap">
+                <div class="form-group d-flex flex-wrap mt-2">
                   <div class="col-12 col-md-6">
                     <label class="small" for="firstName">First Name:</label>
                     <input
@@ -178,7 +178,10 @@ export default {
   },
   data() {
     return {
-      volunteer: {},
+      volunteer: {
+        shirtSize: "--- Shirt Size ---",
+        preferedShift: "--- Volunteer Shift ---"
+      },
       error: {},
       success: false,
       sending: false,
@@ -213,7 +216,10 @@ export default {
           url = "//localhost:5000/" + url;
         }
         let res = await Resources.post(url, this.volunteer);
-        this.volunteer = {};
+        this.volunteer = {
+          shirtSize: "--- Shirt Size ---",
+          preferedShift: "--- Volunteer Shift ---"
+        };
         this.success = true;
       } catch (e) {
         this.error = e;
