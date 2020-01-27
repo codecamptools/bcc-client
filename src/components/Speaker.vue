@@ -4,7 +4,7 @@
       class="rounded img-fluid grayscale action w-75 m-2 align-self-center"
       :src="speaker.profilePicture"
       @error="
-        speaker.profilePicture = `http://tinygraphs.com/squares/${speaker.fullName}`
+        speaker.profilePicture = `https://tinygraphs.com/squares/${speaker.fullName}`
       "
       :alt="speaker.fullName"
       @click="setActive(speaker)"
