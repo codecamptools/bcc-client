@@ -53,9 +53,8 @@ export default new Vuex.Store({
         year = new Date().getFullYear();
       }
       try {
-        let sponsors = await Resources.get(
-          `api/sponsors?where=(year eq ${year})`
-        );
+        //let sponsors = await Resources.get(`api/sponsors?where=(year eq ${year})`);
+        let sponsors = await Resources.get(`api/sponsors`);
         commit("setSponsors", sponsors.results);
       } catch (e) {
         console.warn(e);
