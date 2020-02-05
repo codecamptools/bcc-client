@@ -42,6 +42,13 @@ export default new Vuex.Store({
     },
     setSponsors(state, sponsors = []) {
       state.sponsors = sponsors;
+    }, 
+    updateSponsors(state, updated){
+      var previous = state.sponsors.filter(function(s){ return s.id == updated.id;});
+      if(previous){
+        state.sponsors.splice(state.sponsors.indexOf(previous), 1);
+      }
+      state.sponsors.push(updated);
     }
   },
   actions: {
@@ -53,8 +60,7 @@ export default new Vuex.Store({
         year = new Date().getFullYear();
       }
       try {
-        //let sponsors = await Resources.get(`api/sponsors?where=(year eq ${year})`);
-        let sponsors = await Resources.get(`api/sponsors`);
+        let sponsors = await Resources.get(`api/sponsors?where=(year eq ${year})`);        
         commit("setSponsors", sponsors.results);
       } catch (e) {
         console.warn(e);
