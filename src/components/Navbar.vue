@@ -74,10 +74,11 @@
         </li>
         <li class="nav-item">
           <a
-            href="/sponsor-packet/"
+            
             class="nav-link text-uppercase"
             :class="scrolled ? 'text-dark' : 'text-light'"
             title="Sponsor Packet"
+            @click="scrollTo('home-sponsors')"
           >
             Sponsors
           </a>
@@ -116,6 +117,12 @@ export default {
   methods: {
     onScroll() {
       this.scrolled = window.scrollY > 100;
+    }, 
+    scrollTo(className){
+      var el = this.$root.$el.getElementsByClassName("home-sponsors")[0];
+      if(el){
+        el.scrollIntoViewIfNeeded();
+      }
     }
   }
 };

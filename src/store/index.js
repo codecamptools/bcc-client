@@ -44,11 +44,17 @@ export default new Vuex.Store({
       state.sponsors = sponsors;
     }, 
     updateSponsors(state, updated){
-      var previous = state.sponsors.filter(function(s){ return s.id == updated.id;});
+      var previous = state.sponsors.find(function(s){ return s.id == updated.id;});
       if(previous){
         state.sponsors.splice(state.sponsors.indexOf(previous), 1);
       }
       state.sponsors.push(updated);
+    }, 
+    deleteSponsor(state, deleted){
+      var previous = state.sponsors.filter(function(s){ return s.id == deleted.id;});
+      if(previous){
+        state.sponsors.splice(state.sponsors.indexOf(previous), 1);
+      }
     }
   },
   actions: {

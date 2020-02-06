@@ -104,4 +104,9 @@ a:hover {
 .close-modal-button:hover {
   color: grey;
 }
+
+.button:hover,
+a:hover{
+  cursor: pointer;
+}
 </style>

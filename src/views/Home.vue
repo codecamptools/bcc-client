@@ -15,7 +15,7 @@
       <experience />
       <hr />
       <venue />
-      <div class="row mb-5" v-if="sponsors.length">
+      <div class="row mb-5 home-sponsors" v-if="sponsors.length">
         <hr />
         <div class="col-sm-10">
           <div class="h1 mt-3">
@@ -30,6 +30,7 @@
                 incredible sponsors. Make sure you stop by their booths to check
                 out the coolest swag and potential career opportunities.
               </p>
+              <p>Interested in sponsoring Boise Code Camp? Checkout the <a href="/sponsor-packet/">Sponsor Packet</a> for available sponsor levels.</p>
             </div>
           </div>
         </div>

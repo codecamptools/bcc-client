@@ -5,6 +5,7 @@
       :href="sponsor.url"
       target="_blank"
       rel="noopener"
+      :title="sponsor.name"
     >
       <img :src="sponsor.logo" :alt="sponsor.name" />
     </a>

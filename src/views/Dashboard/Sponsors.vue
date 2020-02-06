@@ -14,8 +14,8 @@
       <thead>
         <tr>
           <th></th>
+          <th>Name</th>
           <th>Level</th>
-          <th>Name</th>          
           <th>contact</th>
           <th></th>
         </tr>
@@ -30,15 +30,14 @@
             Add Sponsor
           </td>
         </tr>
-        <tr v-for="sponsor in sponsors" :key="sponsor.id">
+        <tr v-for="sponsor in orderedSponsors" :key="sponsor.id">
           <td><img :src="sponsor.logo" alt="" /></td>
-          <td>{{ sponsor.level }} {{ sponsor.ppUpgrade }}</td>
           <td>{{ sponsor.name }}</td>
-          
+          <td>{{ sponsor.level | capitalize }} {{ sponsor.ppUpgrade }}</td>
           <td :title="sponsor.contact.email">{{ sponsor.contact.name }}</td>
-          <td class="text-right">
+          <td class="text-right" style="white-space: nowrap" >
             <a @click="showSponsorForm(sponsor)"><i class="fa fa-edit fa-lg text-muted" title="Edit Sponsor"></i></a>
-            <a @click="showConfirmDelete(sponsor)"><i class="fa fa-times fa-lg text-danger" title="Delete Sponsor"></i></a>
+            <a @click="showConfirmDelete(sponsor)"><i class="fa fa-times fa-lg text-muted" title="Delete Sponsor"></i></a>
           </td>
         </tr>
       </tbody>
@@ -78,9 +77,14 @@
           <h3 class="m-0">{{ activeSponsor.id ? "Edit" : "Create" }} Sponsor</h3>
         </div>
        <div class="card-body">
+          
           <form class="border rounded p-2" @submit.prevent="updateSponsor">
+           
             <div class="alert alert-danger" v-if="error.message">
               {{ error.message }}
+            </div>
+            <div class="form-group col-mb-2">              
+               <logo-upload v-model="activeSponsor.logo" v-on:logo-changed="handleLogoChange"></logo-upload>
             </div>
             <div class="form-group col-mb-2">
               <label for="name">Year:</label>
@@ -146,13 +150,13 @@
                   />
                 </div>
               </div>
-            </div>
+            </div>           
             <hr />
             <div class="d-flex align-items-center justify-content-around">
               <button
                 type="button"
                 class="btn btn-link text-danger"
-                @click="toggle--"
+                @click="closeSponsorForm"
               >
                 Cancel
               </button>
@@ -168,7 +172,10 @@
 </template>
 
 <script>
+import _ from "lodash";
 import { Resources } from "../../Services/Resources";
+import LogoUpload from "./components/LogoUpload";
+
 export default {
   name: "sponsors",
   data() {
@@ -178,23 +185,44 @@ export default {
       toggle: 0,
       toggleDeleteConfirmation: 0,
       activeSponsor: {contact:{}, year:2020},
-      error:{}
+      error:{}, 
+      logo64: null
     };
+  },
+  computed: {
+    orderedSponsors: function () {
+      return _.orderBy(this.sponsors, 'name')
+    }
+  },
+  components:{
+    LogoUpload
   },
   mounted() {
       this.getSponsors(this.year);
-    },
+  },
+  filters: {
+    capitalize: function (value) {
+      if (!value) return ''
+      value = value.toString()
+      return value.charAt(0).toUpperCase() + value.slice(1)
+    }
+  },
   methods: {
     async getSponsors(year) {
       let res = await Resources.get(`api/sponsors?where=(year eq ${year})`);
       //let res = await Resources.get(`api/sponsors`);
       this.sponsors = res.results;
     },
+    closeSponsorForm(){
+      this.activeSponsor = null;
+      this.logo64 =null;
+      this.toggle--;
+    },
     showSponsorForm(sponsor) {
       if (!sponsor) {
         sponsor = {contact:{}, year:"2020"};
       }
-      this.activeSponsor = sponsor;
+      this.activeSponsor = _.cloneDeep(sponsor);
       this.toggle++;
     },
     showConfirmDelete(sponsor){
@@ -205,7 +233,11 @@ export default {
       this.error = {};
       let url = "api/sponsors/" + this.activeSponsor.id;
       await Resources["delete"](url,this.activeSponsor);
+
       this.sponsors.splice(this.sponsors.indexOf(this.activeSponsor), 1);
+
+      this.$store.commit("deleteSponsor", this.activeSponsor);
+      this.activeSponsor = null;
       this.toggleDeleteConfirmation--;
     },
     async updateSponsor() {
@@ -222,15 +254,35 @@ export default {
         this.activeSponsor.year = parseFloat(this.activeSponsor.year); //the .number modifier should work on the drop down but isn't
         this.activeSponsor = await Resources[action](url,this.activeSponsor);
         
-        this.$store.commit("updateSponsors", this.activeSponsor);
-        if(action !== "put"){
-          this.sponsors.push(this.activeSponsor);
+        //did we select a new logo?
+        if(this.logo64){
+          var logoUrl = "api/sponsors/" + this.activeSponsor.id + "/logo";
+          this.activeSponsor.logo64 = this.logo64;
+          this.activeSponsor = await Resources["put"](logoUrl, this.activeSponsor);
         }
+
+        this.$store.commit("updateSponsors", this.activeSponsor);
+
+        if(action === "put"){
+          var activeId = this.activeSponsor.id;
+          let existing = _.find(this.sponsors, function (s){return s.id == activeId;});
+          if(existing){
+            this.sponsors.splice(this.sponsors.indexOf(existing),1);
+          }
+        }
+
+        this.sponsors.push(this.activeSponsor);
+
+        this.logo64 = null;
         this.toggle--;
         this.activeSponsor = null;
+
       } catch (e) {
         this.error = e;
       }
+    },
+    handleLogoChange(logo64){
+      this.logo64 = logo64;
     }
   }
 };
@@ -242,5 +294,8 @@ export default {
 }
 .sponsor-delete-form .quick-modal-card{
   max-width: 400px;
+}
+.sponsors td img{
+  max-height: 55px;
 }
 </style>
