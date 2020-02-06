@@ -39,9 +39,7 @@ export default {
       return this.sponsors.filter(s => s.level == "gold" && !this.hideGolds);
     },
     silvers() {
-      return this.sponsors.filter(
-        s => s.level == "silver" && !this.hideSilvers
-      );
+      return this.sponsors.filter(s => s.level == "silver" && !this.hideSilvers);
     },
     friends() {
       return this.sponsors.filter(

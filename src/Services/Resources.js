@@ -10,7 +10,7 @@ class ResourceError extends Error {
 
 export class Resources {
   static baseURL = window.location.host.includes("localhost:")
-    ? "//localhost:5000/"
+    ? "//localhost:5000"
     : "";
   static async request(url, options = {}) {
     try {
