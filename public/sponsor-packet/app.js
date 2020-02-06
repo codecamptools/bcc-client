@@ -193,7 +193,7 @@ function showPaypal() {
           if (window.location.host.includes("localhost:")) {
             url = "http://localhost:5000" + url;
           }else{
-            url = "https://bccsponsoradminsite.azurewebsites.net/" + url;
+            url = "https://bccsponsoradminsite.azurewebsites.net" + url;
           }
           fetch(url, {
             method: "POST",

@@ -1,4 +1,7 @@
 import { getInstance } from "@bcwdev/auth0-vue";
+console.log("process", process);
+
+
 
 class ResourceError extends Error {
   constructor(msg, response) {
@@ -8,10 +11,10 @@ class ResourceError extends Error {
   }
 }
 
-export class Resources {
-  static baseURL = window.location.host.includes("localhost:")
-    ? "//localhost:5000"
-    : "https://bccsponsoradminsite.azurewebsites.net";
+export class Resources {  
+
+  static baseURL = process.env.VUE_APP_BCC_URL;
+
   static async request(url, options = {}) {
     try {
       if (!url.includes("//")) {
