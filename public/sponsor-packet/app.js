@@ -192,6 +192,8 @@ function showPaypal() {
           let url = "/api/sponsors/validate-purchase/" + data.orderID;
           if (window.location.host.includes("localhost:")) {
             url = "http://localhost:5000" + url;
+          }else{
+            url = "https://bccsponsoradminsite.azurewebsites.net/" + url;
           }
           fetch(url, {
             method: "POST",

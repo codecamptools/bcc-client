@@ -11,7 +11,7 @@ class ResourceError extends Error {
 export class Resources {
   static baseURL = window.location.host.includes("localhost:")
     ? "//localhost:5000"
-    : "";
+    : "https://bccsponsoradminsite.azurewebsites.net";
   static async request(url, options = {}) {
     try {
       if (!url.includes("//")) {
