@@ -42,10 +42,10 @@
         </tr>
       </tbody>
     </table>
-     <quick-modal class="sponsor-delete-form" :toggle="toggleDeleteConfirmation" v-if='this.activeSponsor'>
+    <quick-modal class="delete-form" :toggle="toggleDeleteConfirmation" v-if='this.activeSponsor'>
       <div class="bg-white rounded">
         <div class="card-heading bg-primary text-white p-3 rounded-top">
-          <h3 class="m-0">{{ activeSponsor.id ? "Edit" : "Create" }} Sponsor</h3>
+          <h3 class="m-0">Delete Sponsor</h3>
         </div>
        <div class="card-body">
          <div class="alert alert-danger" v-if="error.message">
@@ -150,7 +150,7 @@
                   />
                 </div>
               </div>
-            </div>           
+            </div>
             <hr />
             <div class="d-flex align-items-center justify-content-around">
               <button
@@ -289,12 +289,7 @@ export default {
 </script>
 
 <style>
-.close-modal-button {
-  color: #05403f;
-}
-.sponsor-delete-form .quick-modal-card{
-  max-width: 400px;
-}
+
 .sponsors td img{
   max-height: 55px;
 }

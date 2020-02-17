@@ -70,26 +70,15 @@
               >
                 Volunteer Sign Up
               </h4>
-              <div class="container">
-                <div class="form-group d-flex flex-wrap mt-2">
-                  <div class="col-12 col-md-6">
-                    <label class="small" for="firstName">First Name:</label>
+              <div class="container">                
+                <div class="form-group d-flex flex-wrap">
+                  <div class="col-12">
+                    <label class="small" for="name">Name:</label>
                     <input
-                      v-model="volunteer.firstName"
+                      v-model="volunteer.name"
                       type="text"
-                      name="firstName"
-                      placeholder="First Name"
-                      class="form-control"
-                      required
-                    />
-                  </div>
-                  <div class="col-12 col-md-6">
-                    <label class="small" for="lastName">Last Name:</label>
-                    <input
-                      v-model="volunteer.lastName"
-                      name="lastName"
-                      type="text"
-                      placeholder="Last Name"
+                      name="name"
+                      placeholder="Name"
                       class="form-control"
                       required
                     />

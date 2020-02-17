@@ -32,7 +32,28 @@ export default new Vuex.Store({
     sponsors: [],
     sessions: [],
     speakers: [],
-    schedule: []
+    schedule: [],
+    volunteer: {
+      shifts: [
+        "Morning (07:00 AM - 11:00AM)",
+        "Afternoon (10:45 AM - 02:45PM)",
+        "Evening (02:30 AM - 06:30PM)",
+        "All Day (7:00 AM - 06:30PM)"
+      ],
+      shirtSizes: [
+        "Y-Small",
+        "Y-Medium",
+        "Y-Large",
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL",
+        "3XL",
+        "4XL"
+      ]
+    }
   },
   mutations: {
     setSessionizeData(state, data) {

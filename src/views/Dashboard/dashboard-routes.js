@@ -8,6 +8,7 @@ import Sponsors from "./Sponsors.vue";
 import Notes from "./Notes.vue";
 import Feedback from "./Feedback.vue";
 import Schedule from "./Schedule.vue";
+import Volunteers from "./Volunteers.vue";
 
 export const USER_NAVIGATION = [
   {
@@ -41,6 +42,11 @@ export const EVENT_NAVIGATION = [
     name: "sponsors",
     path: "sponsors",
     component: Sponsors
+  }, 
+  {
+    name: "volunteers", 
+    path: "volunteers",
+    component: Volunteers
   }
 ];
 

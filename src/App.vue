@@ -97,12 +97,16 @@ a:hover {
 
 .close-modal-button {
   font-size: 16pt;
-  padding: 1em;
-  color: rgb(165, 165, 165);
+  padding: 1em;  
+  color: #05403f;
   transition: color 0.3s linear;
 }
 .close-modal-button:hover {
   color: grey;
+}
+
+.delete-form .quick-modal-card{
+  max-width: 550px;
 }
 
 .button:hover,
