@@ -17,7 +17,7 @@
                 <router-link to="register">Register</router-link>
               </li>
               <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                <a href="/sponsor-packet" rel="preload" title="sponsor packet"
+                <a href="/sponsor-packet/" rel="preload" title="sponsor packet"
                   >Sponsor</a
                 >
               </li>
