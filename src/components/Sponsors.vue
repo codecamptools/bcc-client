@@ -1,34 +1,52 @@
 <template>
   <div class="sponsors container-fluid pl-lg-5 pr-lg-5 bg-white">
+    <h3 class="text-center">{{this.year}} Sponsors</h3>
     <div
-      class="row m-auto pl-3 pt-4"
+      class="row m-auto pl-3 pt-4 sponsor-level"
       :class="level"
       v-for="(sponsors, level) in sponsorMap"
       :key="level"
     >
-      <div class="col-12" v-if="!hide(level)">
-        <small class="uppercase"
-          ><b>{{ level }}</b></small
-        >
+      <div class="col-12 text-center" v-if="!hide(level) && level != 'friends'">
+        <small class="uppercase"><b>{{ level }}</b></small>
+         <div class="text-center sponsor">
+           <a
+            v-for="s in sponsors"
+            :key="s.id"
+            :href="s.url"
+            target="_blank"
+            rel="noopener"
+            :title="s.name"
+          >
+            <img
+              :src="s.logo"
+              class="rounded"
+              :alt="s.name"/>
+          </a>
+        </div>
       </div>
-      <div
-        class="col-6 col-sm-2 mt-2 sponsor"
-        v-for="s in sponsors"
-        :key="s.id"
-      >
-        <sponsor :sponsor="s" v-if="level != 'friends'" />
-        <small v-else>{{ s.name }}</small>
+      <div class="col-12 text-center" v-if="level === 'friends'">
+        <small class="uppercase"><b>{{ level }}</b></small>
+         <div class="text-center">
+           <small
+              v-for="s in sponsors"
+              :key="s.id">
+              {{ s.name }}
+            </small>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Sponsor from "./Sponsor.vue";
 export default {
   name: "Sponsors",
   props: ["hideGolds", "hideSilvers", "hideFriends"],
   computed: {
+    year(){
+      return this.$store.state.currentYear;
+    },
     sponsors() {
       return this.$store.state.sponsors;
     },
@@ -69,12 +87,29 @@ export default {
     }
   },
   components: {
-    Sponsor
   }
 };
 </script>
 
 <style>
+.sponsors{
+  padding-top:25px;
+  padding-bottom:0;
+}
+.sponsor-level{
+  padding-top:0 !important;
+}
+.sponsor a {
+  text-decoration: none;
+}
+.sponsor img {
+  filter: grayscale(1);
+  height: 80px;
+  width: 80px;
+  object-fit: contain;
+  padding:0 10px;
+}
+
 .golds .sponsor img {
   height: 100px;
   width: 100px;

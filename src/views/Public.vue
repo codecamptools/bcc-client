@@ -4,6 +4,7 @@
     <main>
       <router-view />
     </main>
+    <sponsors/>
     <foot />
   </div>
 </template>
@@ -11,12 +12,14 @@
 <script>
 import Navbar from "../components/Navbar";
 import Foot from "../components/Foot";
+import Sponsors from "../components/Sponsors";
 
 export default {
   name: "public",
   components: {
     Navbar,
-    Foot
+    Foot,
+    Sponsors
   }
 };
 </script>

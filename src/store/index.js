@@ -6,6 +6,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    currentYear: "2020",
     event: {
       name: "Boise CodeCamp",
       date: "March 22",

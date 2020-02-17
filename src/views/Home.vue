@@ -34,7 +34,6 @@
             </div>
           </div>
         </div>
-        <sponsors />
       </div>
     </section>
   </div>

@@ -74,11 +74,12 @@
         </li>
         <li class="nav-item">
           <a
-            
+            href="/sponsor-packet/"
+            target="_blank"
+            rel="noopener"
             class="nav-link text-uppercase"
             :class="scrolled ? 'text-dark' : 'text-light'"
             title="Sponsor Packet"
-            @click="scrollTo('home-sponsors')"
           >
             Sponsors
           </a>

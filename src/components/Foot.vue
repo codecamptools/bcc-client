@@ -1,6 +1,6 @@
 <template>
-  <footer class="mt-5">
-    <div class="container pt-5 text-center">
+  <footer class="mt-5">    
+    <div class="container pt-5 text-center">      
       <div class="row d-flex flex-wrap align-items-center">
         <div class="col-md-3 col-10 mx-auto pb-3 text-center">
           <img
@@ -73,8 +73,9 @@
 </template>
 
 <script>
+
 export default {
-  name: "Foot"
+  name: "Foot"  
 };
 </script>
 
