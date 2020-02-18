@@ -8,10 +8,10 @@
         >
       </p>
     </div>
-    <div class="col-12">
+    <div class="col-12 speacker-deck">
       <div class="card-deck justify-content-center">
         <div
-          class="card p-0 col-sm-6 col-md-4 col-xl-2"
+          class="card mb-4 p-0 col-sm-6 col-md-4 col-xl-2"
           v-for="speaker in speakers"
           :key="speaker.id"
         >
@@ -100,41 +100,9 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-/* .schedule .nav-tabs {
-  position: sticky;
-  top: 56px;
-  z-index: 2;
-  background: var(--dark);
-  color: var(--light);
-  border: none;
-  overflow-x: auto;
-  overflow-y: hidden;
+.speacker-deck .card{
+  min-width:215px;
 }
-.schedule .nav-link {
-  border-radius: 0 !important;
-  border: none;
-  width: max-content;
-}
-@media screen and (max-width: 700px) {
-  .schedule-item {
-    padding: 1rem 8px;
-    padding: 1rem 0;
-    border: none;
-    border-bottom: 1px solid var(--light);
-    margin: -20px;
-  }
-  .schedule-item:nth-child(even) {
-    background: var(--light);
-    color: var(--dark);
-    padding: 1rem 8px;
-  }
-  .schedule .nav-tabs {
-    padding: 0;
-    margin: -30px;
-    display: flex;
-    flex-wrap: nowrap;
-  }
-} */
 .grayscale {
   filter: grayscale(1);
 }
